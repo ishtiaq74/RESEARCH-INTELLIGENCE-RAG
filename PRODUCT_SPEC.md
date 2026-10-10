@@ -1,6 +1,8 @@
 # PRODUCT_SPEC.md — Research Intelligence RAG
 
 
+---
+
 ## 0. Document governance (Deliverable 5)
 
 | File | Answers | Owner of edits | Read by |
@@ -91,6 +93,7 @@ Autonomous research agents · knowledge graphs · voice · team collaboration ·
 | Q2 Auth method | Email + password via standard provider; Google if effort permits; no SSO | D-010 |
 | Q3 Upload limits | Provisional configurable limits (§2.2), finalized after cost estimates | D-011 |
 | Q4 Audience | Portfolio-quality MVP intended for eventual public access | D-012 |
+| Q5 General-knowledge fallback? | No, not in MVP | D-009 |
 
 ### 2.2 Upload and project limits (provisional, configurable)
 | Limit | Starting value | Notes |
@@ -147,7 +150,6 @@ This is a product checklist, **not legal advice**; items marked (L) need review 
 - A8. Email verification and auth rate limiting (see §2.3).
 
 ### 2.7 Open questions
-- **Q5.** Should the product ever offer an explicitly labelled, user-initiated "answer from general model knowledge (unverified)"? Default: no in MVP (D-009 PROPOSED).
 - **Q6.** Confirm A8 (email verification, rate limiting) and whether Google sign-in should be scheduled or left opportunistic.
 - **Q7 (Antigravity).** Cost estimates and final limits (§2.2); PDF page viewer feasibility; actual deletion/backup behavior.
 - **Q8.** Hosting/jurisdiction for user data, which feeds the §2.5 legal items.
@@ -242,7 +244,7 @@ Each answer is a list of **claim blocks**, each carrying one label:
 Rules: a block without citations may only be labelled Hypothesis or be a transitional sentence; the UI must not render an uncited factual claim in default style. **[ASSUMPTION A6]** backend provides label + citation IDs per block.
 
 #### 4.2.2 No-evidence state
-Replace the answer with a distinct card: "No supporting evidence found in the selected papers." Show what was searched (scope), offer: broaden scope, rephrase, upload more papers. Do **not** show a general-knowledge answer styled like a cited one. **[OPEN Q5, product-level]** Whether to ever offer an explicitly labelled "answer from general model knowledge (unverified)" as a user-initiated action. Default: no, in MVP.
+Replace the answer with a distinct card: "No supporting evidence found in the selected papers." Show what was searched (scope), offer: broaden scope, rephrase, upload more papers. Do **not** show a general-knowledge answer styled like a cited one. **[RESOLVED, D-009]** No general-knowledge fallback in MVP, including as a user-initiated action.
 
 ### 4.3 Citation inspection experience (S7)
 - **Inline chip** `[3]`-style numeric marker + short label on hover/focus (e.g., "Smith 2021, p. 7").
